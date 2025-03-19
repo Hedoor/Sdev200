@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class IdenticalArrays {
+
+    /** Return true if two 3x3 arrays are identical */
+    public static boolean equals(int[][] m1, int[][] m2) {
+        // Check if both arrays are of the same size (3x3)
+        if (m1.length != m2.length || m1[0].length != m2[0].length) {
+            return false; // Arrays of different sizes cannot be identical
+        }
+
+        // Compare corresponding elements in both arrays
+        for (int i = 0; i < m1.length; i++) {
+            for (int j = 0; j < m1[i].length; j++) {
+                if (m1[i][j] != m2[i][j]) {
+                    return false; // If any element is different, the arrays are not identical
+                }
+            }
+        }
+
+        return true; // Arrays are identical if no differences were found
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Initialize two 3x3 arrays
+        int[][] m1 = new int[3][3];
+        int[][] m2 = new int[3][3];
+
+        // Prompt the user to enter the first 3x3 array
+        System.out.println("Enter the elements of the first 3x3 array (m1):");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("m1[" + i + "][" + j + "]: ");
+                m1[i][j] = input.nextInt();
+            }
+        }
+
+        // Prompt the user to enter the second 3x3 array
+        System.out.println("Enter the elements of the second 3x3 array (m2):");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("m2[" + i + "][" + j + "]: ");
+                m2[i][j] = input.nextInt();
+            }
+        }
+
+        // Check if the arrays are identical and display the result
+        if (equals(m1, m2)) {
+            System.out.println("The two arrays are identical.");
+        } else {
+            System.out.println("The two arrays are not identical.");
+        }
+
+        input.close();
+    }
+}
