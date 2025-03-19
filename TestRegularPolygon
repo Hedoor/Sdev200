@@ -1,0 +1,19 @@
+public class TestRegularPolygon {
+    public static void main(String[] args) {
+        // Create three RegularPolygon objects
+        RegularPolygon polygon1 = new RegularPolygon(); // Default constructor
+        RegularPolygon polygon2 = new RegularPolygon(6, 4); // 6 sides, side length 4
+        RegularPolygon polygon3 = new RegularPolygon(10, 4, 5.6, 7.8); // 10 sides, side length 4, center (5.6, 7.8)
+
+        // Display the perimeter and area for each polygon
+        displayPolygonDetails(polygon1);
+        displayPolygonDetails(polygon2);
+        displayPolygonDetails(polygon3);
+    }
+
+    // Helper method to display the perimeter and area of a polygon
+    public static void displayPolygonDetails(RegularPolygon polygon) {
+        System.out.println("Polygon with " + polygon.getN() + " sides and side length " + polygon.getSide() +
+                ": Perimeter = " + polygon.getPerimeter() + ", Area = " + polygon.getArea());
+    }
+}
