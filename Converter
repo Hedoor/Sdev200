@@ -1,0 +1,51 @@
+public class Converter
+
+{
+
+public static void main(String[] args)
+
+{
+
+// Table layout
+
+System.out.println("\nFeet Meters | Meters Feet\n" +"--------------------------------------");
+
+for (double feet = 1.0, meters = 20.0; feet <= 10.0; feet++, meters += 5)
+
+{
+
+System.out.printf("%4.2f     ", feet);
+
+System.out.printf("%5.2f", footToMeter(feet));
+
+System.out.print("     |     ");
+
+System.out.printf("%-10.2f", meters);
+
+System.out.printf("%6.2f\n", meterToFoot(meters));
+
+}
+
+}
+
+// conversion of foot to meters
+
+public static double footToMeter(double foot)
+
+{
+
+return 0.305 * foot;
+
+}
+
+// conversion of meters to foot
+
+public static double meterToFoot(double meter)
+
+{
+
+return 3.279 * meter;
+
+}
+
+}
